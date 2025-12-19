@@ -10,4 +10,4 @@
 
 可是往事太久远，我也不知道什么是真，什么是假了。
 
-![alt text](./images/flowers.png)
+![水仙花](./images/flowers.png)
