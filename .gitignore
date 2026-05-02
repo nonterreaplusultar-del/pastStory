@@ -26,6 +26,9 @@ CLAUDE.local.md
 ai/reports/private/
 ai/reports/private/**
 
+# Fetched post cache
+.cache/
+
 # Backup files
 *.bak
 *.tmp
