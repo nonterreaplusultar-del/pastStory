@@ -18,3 +18,5 @@ drafts/private/**
 # 本地环境文件
 .env
 .DS_Store
+
+.claude/
