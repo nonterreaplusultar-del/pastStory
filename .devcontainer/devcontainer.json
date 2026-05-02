@@ -1,0 +1,26 @@
+{
+  "name": "memoir-writing",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "postCreateCommand": "npm install",
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "HonKit Preview",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "editor.wordWrap": "on",
+        "files.autoSave": "afterDelay",
+        "markdown.preview.breaks": true
+      }
+    }
+  }
+}

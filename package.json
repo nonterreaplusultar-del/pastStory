@@ -1,0 +1,27 @@
+{
+  "name": "paststory",
+  "version": "1.0.0",
+  "description": "--- metaLinks:   alternates:     - https://app.gitbook.com/s/2AwfWOGBWBxQmyvHedqW/ ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "honkit serve . _book --port 4000",
+    "build": "honkit build . _book",
+    "clean": "rm -rf _book"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonterreaplusultar-del/pastStory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nonterreaplusultar-del/pastStory/issues"
+  },
+  "homepage": "https://github.com/nonterreaplusultar-del/pastStory#readme",
+  "devDependencies": {
+    "honkit": "^6.1.7"
+  }
+}

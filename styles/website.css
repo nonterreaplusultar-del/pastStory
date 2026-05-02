@@ -1,0 +1,18 @@
+.markdown-section {
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+.markdown-section p {
+  text-indent: 2em;
+}
+
+.markdown-section img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.markdown-section blockquote {
+  color: #666;
+  border-left: 4px solid #ddd;
+}

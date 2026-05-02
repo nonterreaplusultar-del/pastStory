@@ -1,0 +1,9 @@
+{
+  "title": "个人回忆录",
+  "author": "senxichong",
+  "language": "zh-hans",
+  "description": "按年份整理的个人回忆录",
+  "styles": {
+    "website": "styles/website.css"
+  }
+}

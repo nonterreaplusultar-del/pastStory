@@ -1,0 +1,8 @@
+node_modules/
+_book/
+.DS_Store
+.env
+
+# 不上传私人内容
+private/
+drafts/private/
