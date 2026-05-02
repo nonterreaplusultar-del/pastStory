@@ -1,14 +1,7 @@
 {
-  "name": "memoir-writing",
+  "name": "pastStory AI Memoir Workspace",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
-  "postCreateCommand": "npm install",
-  "forwardPorts": [4000],
-  "portsAttributes": {
-    "4000": {
-      "label": "HonKit Preview",
-      "onAutoForward": "notify"
-    }
-  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y git-lfs && git lfs install && npm install && npm install -g @anthropic-ai/claude-code || true",
   "customizations": {
     "vscode": {
       "extensions": [
