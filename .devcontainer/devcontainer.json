@@ -1,7 +1,7 @@
 {
   "name": "pastStory AI Memoir Workspace",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y git-lfs && git lfs install && npm install && npm install -g @anthropic-ai/claude-code || true",
+  "postCreateCommand": "bash scripts/setup-codespace.sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -12,7 +12,8 @@
       "settings": {
         "editor.wordWrap": "on",
         "files.autoSave": "afterDelay",
-        "markdown.preview.breaks": true
+        "markdown.preview.breaks": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   }

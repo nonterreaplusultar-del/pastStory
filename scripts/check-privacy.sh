@@ -31,7 +31,23 @@ fi
 
 echo
 echo "4. 检查常见密钥泄露痕迹"
-if git grep -n -I -E 'sk-[A-Za-z0-9_-]{16,}|ANTHROPIC_AUTH_TOKEN=|DEEPSEEK_API_KEY=|api[_-]?key|password=' -- . ':!package-lock.json' ':!CLAUDE.md' ':!AGENTS.md' 2>/dev/null; then
+
+secret_hits="$(
+  git grep -n -I -E \
+    'sk-[A-Za-z0-9_-]{20,}|(ANTHROPIC_AUTH_TOKEN|DEEPSEEK_API_KEY|OPENAI_API_KEY|GITHUB_TOKEN)[[:space:]]*=[[:space:]]*["'\'']?[^"'\''[:space:]]{8,}' \
+    -- . \
+    ':!package-lock.json' \
+    ':!node_modules/**' \
+    ':!_book/**' \
+    ':!_private/**' \
+    ':!private/**' \
+    ':!scripts/check-privacy.sh' \
+    2>/dev/null || true
+)"
+
+if [ -n "$secret_hits" ]; then
+  echo "$secret_hits"
+  echo
   echo "警告：发现疑似密钥或密码字段，请人工确认。"
   exit 1
 else

@@ -94,3 +94,33 @@ SUMMARY.md 控制 GitBook 的公开目录。
 5. 修改后给出变更摘要。
 6. 不自动 push，除非用户明确要求。
 
+
+## AI 日常流程
+
+本项目使用 `ai/` 目录管理 Claude + DeepSeek 自动化任务。
+
+### 任务流
+
+1. 手机端或电脑端把任务写入 `ai/tasks/inbox/`。
+2. AI 读取任务单。
+3. AI 根据任务类型处理文章、草稿、目录或报告。
+4. AI 生成报告到 `ai/reports/`。
+5. AI 运行 `./scripts/check-privacy.sh`。
+6. AI 运行 `npm run build`。
+7. AI 运行 `git status`。
+8. 用户确认后再 commit / push。
+
+### 默认禁止
+
+- 不读取 `_private/`
+- 不提交 `private/` 或 `_private/`
+- 不擅自公开 drafts
+- 不擅自加入 SUMMARY.md
+- 不自动 push
+
+### 常用命令
+
+- `./scripts/ai-new-task.sh polish "任务标题"`
+- `./scripts/ai-status.sh`
+- `./scripts/ai-precheck.sh`
+- `./scripts/daily-flow.sh`

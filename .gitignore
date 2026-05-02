@@ -25,3 +25,8 @@ CLAUDE.local.md
 # AI private reports
 ai/reports/private/
 ai/reports/private/**
+
+# Backup files
+*.bak
+*.tmp
+*.swp

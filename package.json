@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "honkit serve . _book --port 4000",
     "build": "honkit build . _book",
-    "clean": "rm -rf _book"
+    "clean": "rm -rf _book",
+    "ai:status": "bash scripts/ai-status.sh",
+    "ai:precheck": "bash scripts/ai-precheck.sh",
+    "daily": "bash scripts/daily-flow.sh"
   },
   "repository": {
     "type": "git",
