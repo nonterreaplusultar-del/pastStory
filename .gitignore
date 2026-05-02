@@ -6,3 +6,15 @@ _book/
 # 不上传私人内容
 private/
 drafts/private/
+
+# 私密回忆，不上传 GitHub，也不同步 GitBook
+_private/
+_private/**
+
+# 私密草稿
+drafts/private/
+drafts/private/**
+
+# 本地环境文件
+.env
+.DS_Store
