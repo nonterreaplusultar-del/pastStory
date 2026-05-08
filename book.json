@@ -5,5 +5,11 @@
   "description": "按年份整理的个人回忆录",
   "styles": {
     "website": "styles/website.css"
-  }
+  },
+    "plugins": [
+    "-lunr",
+    "-search",
+    "fontsettings",
+    "theme-default"
+  ]
 }

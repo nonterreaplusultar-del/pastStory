@@ -1,0 +1,38 @@
+# Development / automation
+.claude/
+.devcontainer/
+.github/
+.vscode/
+backup/
+planning/
+reviews/
+analysis_output/
+drafts/
+templates/
+
+
+_book/
+.claude/
+.devcontainer/
+.github/
+scripts/
+templates/
+node_modules/
+
+# Scripts and configs
+scripts/
+AGENTS.md
+CLAUDE.md
+package.json
+package-lock.json
+.gitignore
+
+# Git / dependencies / cache
+.git/
+node_modules/
+npm-debug.log
+.DS_Store
+Thumbs.db
+
+# Do not publish workflow/source-only files
+*.log
