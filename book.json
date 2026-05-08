@@ -6,10 +6,12 @@
   "styles": {
     "website": "styles/website.css"
   },
-    "plugins": [
+  "plugins": [
     "-lunr",
     "-search",
     "fontsettings",
-    "theme-default"
+    "theme-default",
+    "chollapse",
+    "@dogatana/back-to-top-button"
   ]
 }

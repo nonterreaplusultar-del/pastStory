@@ -19,7 +19,7 @@ drafts/private/
 drafts/private/**
 
 # Claude local-only files
-CLAUDE.local.md
+CLAUDE.lnpm install gitbook-plugin-chollapse --save-devocal.md
 .claude/settings.local.json
 
 # AI private reports

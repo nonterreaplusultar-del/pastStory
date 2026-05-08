@@ -1,18 +1,70 @@
-.markdown-section {
-  line-height: 1.85;
-  font-size: 16px;
+.book .book-summary {
+  background: #faf9f7;
+  border-right: 1px solid #eee6dc;
 }
 
-.markdown-section p {
-  text-indent: 2em;
+.book .book-body {
+  background: #fffdf9;
 }
 
-.markdown-section img {
-  border-radius: 8px;
-  max-width: 100%;
+.book .book-body .page-wrapper .page-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 60px;
 }
 
-.markdown-section blockquote {
+.book .book-body .page-wrapper .page-inner section.normal {
+  font-size: 17px;
+  line-height: 1.95;
+  color: #2f2f2f;
+  letter-spacing: 0.02em;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 1.2em;
+  border-bottom: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 2.4em;
+  border-bottom: 1px solid #eee6dc;
+  padding-bottom: 0.35em;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal p {
+  margin: 1.05em 0;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal blockquote {
+  border-left: 3px solid #cfc6ba;
   color: #666;
-  border-left: 4px solid #ddd;
+  background: transparent;
+  padding: 0.2em 0 0.2em 1.2em;
+  margin: 1.8em 0;
+}
+
+.book .book-summary ul.summary li a {
+  color: #5a544c;
+  font-size: 14px;
+}
+
+.book .book-summary ul.summary li.active > a {
+  color: #111;
+  font-weight: 600;
+}
+
+.book .book-header {
+  background: rgba(255, 253, 249, 0.95);
+  border-bottom: 1px solid #eee6dc;
+}
+
+.gitbook-link,
+.book-footer,
+.page-footer,
+#book-search-results {
+  display: none !important;
 }

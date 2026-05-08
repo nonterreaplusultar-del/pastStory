@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/nonterreaplusultar-del/pastStory#readme",
   "devDependencies": {
+    "@dogatana/honkit-plugin-back-to-top-button": "^1.0.0",
+    "gitbook-plugin-chollapse": "^1.0.1",
     "honkit": "^6.1.7"
   }
 }
