@@ -10,12 +10,6 @@
     "-lunr",
     "-search",
     "theme-default",
-    "chollapse",
-    "@dogatana/back-to-top-button"
-  ],
-  "pluginsConfig": {
-    "theme-default": {
-      "showLevel": false
-    }
-  }
+    "chollapse"
+  ]
 }
