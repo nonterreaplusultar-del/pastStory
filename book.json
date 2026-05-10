@@ -2,16 +2,20 @@
   "title": "个人回忆录",
   "author": "senxichong",
   "language": "zh-hans",
-  "description": "按年份整理的个人回忆录",
+  "description": "按年份整理的私人记忆、旧事与时间的回声",
   "styles": {
     "website": "styles/website.css"
   },
   "plugins": [
     "-lunr",
     "-search",
-    "fontsettings",
     "theme-default",
     "chollapse",
     "@dogatana/back-to-top-button"
-  ]
+  ],
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": false
+    }
+  }
 }
