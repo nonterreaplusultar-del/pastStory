@@ -1,38 +1,48 @@
-# Development / automation
+# AI / development workspaces
+ai/
 .claude/
 .devcontainer/
 .github/
 .vscode/
+analysis_output/
 backup/
 planning/
 reviews/
-analysis_output/
+
+# Drafts and templates
 drafts/
 templates/
 
-
+# Build output and dependencies
 _book/
-.claude/
-.devcontainer/
-.github/
-scripts/
-templates/
 node_modules/
 
-# Scripts and configs
+# Automation scripts and source config
 scripts/
 AGENTS.md
 CLAUDE.md
+CLAUDE.local.md
 package.json
 package-lock.json
+.bookignore
 .gitignore
-
-# Git / dependencies / cache
 .git/
-node_modules/
+
+# Logs and local system files
+.env
+.cache/
 npm-debug.log
 .DS_Store
 Thumbs.db
-
-# Do not publish workflow/source-only files
 *.log
+*.bak
+*.tmp
+*.swp
+
+
+.env
+.env.local
+.env.*
+.claude/
+ai/
+analysis_output/

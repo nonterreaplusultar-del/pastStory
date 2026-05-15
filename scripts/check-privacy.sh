@@ -32,17 +32,50 @@ fi
 echo
 echo "4. 检查常见密钥泄露痕迹"
 
-secret_hits="$(
-  git grep -n -I -E \
-    'sk-[A-Za-z0-9_-]{20,}|(ANTHROPIC_AUTH_TOKEN|DEEPSEEK_API_KEY|OPENAI_API_KEY|GITHUB_TOKEN)[[:space:]]*=[[:space:]]*["'\'']?[^"'\''[:space:]]{8,}' \
+secret_pattern='sk-[A-Za-z0-9_-]{20,}|(ANTHROPIC_AUTH_TOKEN|DEEPSEEK_API_KEY|OPENAI_API_KEY|GITHUB_TOKEN)[[:space:]]*=[[:space:]]*["'\'']?[^"'\''[:space:]]{8,}'
+
+secret_locations() {
+  sed -E 's#^\./##; s/^([^:]+:[0-9]+):.*$/\1/'
+}
+
+tracked_secret_hits="$(
+  git grep -n -I -E "$secret_pattern" \
     -- . \
     ':!package-lock.json' \
+    ':!**/package-lock.json' \
     ':!node_modules/**' \
     ':!_book/**' \
     ':!_private/**' \
     ':!private/**' \
+    ':!drafts/private/**' \
+    ':!.env.local' \
     ':!scripts/check-privacy.sh' \
-    2>/dev/null || true
+    2>/dev/null | secret_locations || true
+)"
+
+workspace_secret_hits="$(
+  find . \
+    \( \
+      -path './_private' -o -path './_private/*' -o \
+      -path './private' -o -path './private/*' -o \
+      -path './drafts/private' -o -path './drafts/private/*' -o \
+      -path './.git' -o -path './.git/*' -o \
+      -path './node_modules' -o -path './node_modules/*' -o \
+      -path './_book' -o -path './_book/*' \
+    \) -prune -o \
+    -type f \
+    ! -name 'package-lock.json' \
+    ! -name '.env.local' \
+    ! -path './scripts/check-privacy.sh' \
+    -print0 |
+  xargs -0 grep -n -I -E "$secret_pattern" 2>/dev/null |
+  secret_locations || true
+)"
+
+secret_hits="$(
+  printf '%s\n%s\n' "$tracked_secret_hits" "$workspace_secret_hits" |
+    sed '/^$/d' |
+    sort -u
 )"
 
 if [ -n "$secret_hits" ]; then

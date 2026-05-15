@@ -6,6 +6,8 @@ _book/
 
 # Environment
 .env
+.env.local
+.env.*
 .DS_Store
 
 # Private memoir content
@@ -19,7 +21,7 @@ drafts/private/
 drafts/private/**
 
 # Claude local-only files
-CLAUDE.lnpm install gitbook-plugin-chollapse --save-devocal.md
+CLAUDE.local.md
 .claude/settings.local.json
 
 # AI private reports

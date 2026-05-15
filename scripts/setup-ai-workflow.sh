@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [ "${CONFIRM_BOOTSTRAP_AI_WORKFLOW:-}" != "1" ]; then
+  echo "This is a one-time bootstrap script and may overwrite AI workflow files."
+  echo "Run with CONFIRM_BOOTSTRAP_AI_WORKFLOW=1 only when you intentionally want to regenerate them."
+  exit 1
+fi
+
 mkdir -p ai/prompts ai/reports ai/tasks
 mkdir -p ai/tasks/inbox ai/tasks/doing ai/tasks/done ai/tasks/archive
 mkdir -p .claude/commands scripts

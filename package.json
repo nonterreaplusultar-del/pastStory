@@ -2,12 +2,18 @@
   "name": "paststory",
   "version": "1.0.0",
   "description": "--- metaLinks:   alternates:     - https://app.gitbook.com/s/2AwfWOGBWBxQmyvHedqW/ ---",
-  "main": "index.js",
+  "engines": {
+    "node": ">=22 <23"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run check:structure",
+    "check:structure": "node -e \"const fs=require('fs'); const required=['README.md','SUMMARY.md','2017','2018','2020','2024','2025','2026','drafts']; const missing=required.filter((path)=>!fs.existsSync(path)); if(missing.length){console.error('Missing required paths: '+missing.join(', ')); process.exit(1);} console.log('Structure check passed.');\"",
+    "check:privacy": "bash scripts/check-privacy.sh",
+    "check:build": "npm run build",
+    "check:prepublish": "bash scripts/prepublish.sh",
     "serve": "honkit serve . _book --port 4000",
     "build": "honkit build . _book",
-    "clean": "rm -rf _book",
+    "clean": "node -e \"const fs=require('fs'); const path=require('path'); const target=path.resolve('_book'); const cwd=process.cwd(); if(target!==path.join(cwd,'_book')){throw new Error('Refusing to clean unexpected path: '+target);} fs.rmSync(target,{recursive:true,force:true}); console.log('Cleaned _book.');\"",
     "ai:status": "bash scripts/ai-status.sh",
     "ai:precheck": "bash scripts/ai-precheck.sh",
     "daily": "bash scripts/daily-flow.sh"
