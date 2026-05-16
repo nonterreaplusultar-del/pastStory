@@ -6,6 +6,10 @@
     "node": ">=22 <23"
   },
   "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build:solar": "vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 0.0.0.0",
     "test": "npm run check:structure",
     "check:structure": "node -e \"const fs=require('fs'); const required=['README.md','SUMMARY.md','2017','2018','2020','2024','2025','2026','drafts']; const missing=required.filter((path)=>!fs.existsSync(path)); if(missing.length){console.error('Missing required paths: '+missing.join(', ')); process.exit(1);} console.log('Structure check passed.');\"",
     "check:privacy": "bash scripts/check-privacy.sh",
@@ -32,7 +36,22 @@
   "homepage": "https://github.com/nonterreaplusultar-del/pastStory#readme",
   "devDependencies": {
     "@dogatana/honkit-plugin-back-to-top-button": "^1.0.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.184.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "gitbook-plugin-chollapse": "^1.0.1",
-    "honkit": "^6.1.7"
+    "honkit": "^6.1.7",
+    "typescript": "^6.0.3",
+    "vite": "^6.4.2"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.16.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "three": "^0.184.0"
   }
 }
